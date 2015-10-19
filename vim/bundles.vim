@@ -24,7 +24,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'kien/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " NERDTree configure
 nnoremap <silent><F2> :NERDTreeToggle<cr>
@@ -53,6 +53,17 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " ctrlsf configure
 nmap <F5> <Plug>CtrlSFPrompt
+
+" syntastic configure
+let g:syntastic_check_on_open = 1
+let g:syntastic_cpp_include_dirs = ['/usr/include/']
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_enable_balloons = 1
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
