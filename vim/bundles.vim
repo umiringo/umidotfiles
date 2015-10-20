@@ -54,5 +54,18 @@ let g:ctrlp_cmd = 'CtrlP'
 " ctrlsf configure
 nmap <F5> <Plug>CtrlSFPrompt
 
+" YouCompleteMe configure
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm'
+set completeopt=longest,menu
+inoremap <expr> <space>       pumvisible() ? "\<C-y>" : "\<space>"
+let g:ycm_cache_omnifunc=0
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
 call vundle#end()            " required
 filetype plugin indent on    " required
